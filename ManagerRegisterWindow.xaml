@@ -1,0 +1,28 @@
+﻿<Window x:Class="TechnoServiceProject.ManagerRegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechnoServiceProject"
+        mc:Ignorable="d"
+         Title="Техносервис - Окно менеджера - Регистрация пользователей" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <Label Content="Регистрация пользователей" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </StackPanel>
+        <Label Content="Имя" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,85,0,0"/>
+        <Label Content="Логин*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,127,0,0"/>
+        <Label Content="Пароль*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,164,0,0"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,206,0,0"/>
+        <Label Content="Карта" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,248,0,0"/>
+        <TextBox MaxLength="150" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Имя}" VerticalAlignment="Top" Width="700" Margin="72,89,0,0"/>
+        <TextBox x:Name="loginBox" MaxLength="50"  HorizontalAlignment="Left" Height="23" Margin="92,131,0,0" TextWrapping="Wrap" Text="{Binding Логин}" VerticalAlignment="Top" Width="680"/>
+        <TextBox x:Name="passBox" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="102,168,0,0" TextWrapping="Wrap" Text="{Binding Пароль}" VerticalAlignment="Top" Width="670"/>
+        <TextBox x:Name="phoneBox" MaxLength="15" HorizontalAlignment="Left" Height="23" Margin="104,210,0,0" TextWrapping="Wrap" Text="{Binding Телефон}" VerticalAlignment="Top" Width="668" PreviewTextInput="phoneBox_PreviewTextInput"/>
+        <TextBox x:Name="cardBox" MaxLength="16" HorizontalAlignment="Left" Height="23" Margin="92,252,0,0" TextWrapping="Wrap" Text="{Binding Карта}" VerticalAlignment="Top" Width="680" PreviewTextInput="cardBox_PreviewTextInput"/>
+        <Button x:Name="registerBtn" Click="registerBtn_Click" Content="Зарегистрировать" HorizontalAlignment="Left" Margin="572,357,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="backBtn" Click="backBtn_Click" Content="Назад" HorizontalAlignment="Left" Margin="26,357,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Роль*" HorizontalAlignment="Left" Margin="26,290,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="roleBox" SelectedItem="{Binding Роли}" DisplayMemberPath="Название" HorizontalAlignment="Left" Margin="83,290,0,0" VerticalAlignment="Top" Width="250"/>
+    </Grid>
+</Window>
